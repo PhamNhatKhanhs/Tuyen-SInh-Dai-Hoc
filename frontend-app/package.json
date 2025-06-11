@@ -1,4 +1,4 @@
-{
+﻿{
     "name": "tuyensinh-dh-frontend",
     "private": true,
     "version": "0.0.0",
@@ -37,3 +37,4 @@
         "vite": "^5.2.0"
     }
 }
+

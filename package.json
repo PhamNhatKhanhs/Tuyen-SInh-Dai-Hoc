@@ -1,12 +1,40 @@
 {
+  "name": "tuyensinh-dh-fullstack",
+  "version": "1.0.0",
+  "description": "University Admission Management System - Full Stack Application",
+  "private": true,
+  "scripts": {
+    "install-all": "cd frontend-app && npm install && cd ../backend-app && npm install && cd ..",
+    "build": "cd frontend-app && npm run build",
+    "dev:frontend": "cd frontend-app && npm run dev",
+    "dev:backend": "cd backend-app && npm run dev",
+    "start:backend": "cd backend-app && npm start",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel",
+    "vercel-build": "npm run build"
+  },
   "dependencies": {
     "@ant-design/icons": "^6.0.0",
     "antd": "^5.25.4",
     "lucide-react": "^0.513.0"
   },
-  "scripts": {
-    "install-all": "cd frontend-app && npm install && cd ../backend-app && npm install",
-    "build": "cd frontend-app && npm run build",
-    "deploy": "vercel --prod"
-  }
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/tuyensinh-dh.git"
+  },
+  "keywords": [
+    "university",
+    "admission",
+    "management",
+    "react",
+    "nodejs",
+    "mongodb",
+    "typescript"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
 }

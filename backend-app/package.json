@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "tuyensinh-dh-backend",
   "version": "1.0.0",
   "description": "Backend for Online University Admission System",
@@ -24,3 +24,4 @@
     "nodemon": "^2.0.22"
   }
 }
+

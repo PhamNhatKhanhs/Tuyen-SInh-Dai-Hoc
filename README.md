@@ -532,6 +532,74 @@ EMAIL_HOST=your-smtp-server.com
 
 ---
 
+## 🚀 DEPLOY LÊN VERCEL
+
+### Quick Deploy (Khuyên dùng)
+```powershell
+# Chạy script tự động deploy tất cả
+.\quick-deploy.ps1
+```
+
+### Deploy từng bước
+
+#### 1. Kiểm tra yêu cầu hệ thống
+```powershell
+.\check-requirements.ps1
+```
+
+#### 2. Cài đặt và build
+```powershell
+# Cài đặt dependencies
+.\deploy-prepare.ps1 -Install
+
+# Build frontend
+.\deploy-prepare.ps1 -Build
+```
+
+#### 3. Deploy lên Vercel
+```powershell
+# Cài đặt Vercel CLI (nếu chưa có)
+npm install -g vercel
+
+# Deploy
+vercel
+
+# Deploy production  
+vercel --prod
+```
+
+#### 4. Thiết lập Environment Variables
+Truy cập [Vercel Dashboard](https://vercel.com/dashboard) và thêm các biến:
+
+| Variable | Value | Description |
+|----------|--------|-------------|
+| `MONGODB_URI` | `mongodb+srv://...` | MongoDB connection string |
+| `JWT_SECRET` | `your-32-char-secret` | JWT secret key |
+| `EMAIL_HOST` | `smtp.gmail.com` | SMTP server |
+| `EMAIL_PORT` | `587` | SMTP port |
+| `EMAIL_USER` | `your-email@gmail.com` | Email username |
+| `EMAIL_PASS` | `your-app-password` | Email app password |
+| `FRONTEND_URL` | `https://your-app.vercel.app` | Frontend URL |
+
+### MongoDB Atlas Setup
+1. Tạo tài khoản tại [MongoDB Atlas](https://cloud.mongodb.com)
+2. Tạo cluster miễn phí
+3. Tạo database user
+4. Whitelist IP: `0.0.0.0/0` (cho phép tất cả)
+5. Lấy connection string
+
+### Gmail Setup cho Email Service
+1. Bật 2-Factor Authentication
+2. Tạo App Password:
+   - Google Account → Security → 2-Step Verification → App passwords
+   - Chọn "Mail" và tạo password
+   - Sử dụng password này cho `EMAIL_PASS`
+
+### 📖 Hướng dẫn chi tiết
+Đọc file [DEPLOY_GUIDE.md](./DEPLOY_GUIDE.md) để có hướng dẫn deploy chi tiết và troubleshooting.
+
+---
+
 ## 📈 Performance
 
 ### Frontend Optimizations
